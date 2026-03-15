@@ -1,0 +1,25 @@
+table design
+category
+id	name
+int	varchar
+
+goods
+id	category	name	price	store	sell	image
+int	int		varchar	float	int	int	varchar
+功能
+
+sell
+id	goods	number	date	customer*
+int	int	int
+
+buy
+id 	goods	number	supplier date
+
+supplier
+id	name	date
+
+添加分类
+添加商品
+出库shipment
+入库purchase
+供应商supplier
