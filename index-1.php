@@ -83,7 +83,7 @@
 		if ($_GET["current"])
 			$current = $_GET["current"];
 		else $current = 1;
-		if ($current <= $pages && $current > 1)
+		if ($current > 1)
 			echo "<a href='index-1.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
 		for ($i = 1; $i <= $pages; $i++) {
 			if ($i == $current)
@@ -91,7 +91,7 @@
 			else
 				echo "<a href='index-1.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
 		}
-		if ($current < $pages && $current >= $pages - 1)
+		if ($current < $pages)
 			echo "<a href='index-1.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
 		?>
 	</div>
