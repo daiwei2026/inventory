@@ -1,9 +1,0 @@
-index.php
-category
-name
-
-goods
-image
-store
-price
-name

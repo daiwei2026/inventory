@@ -17,6 +17,7 @@ if ($result->num_rows > 0) {
 	// 输出数据
 	while ($row = $result->fetch_assoc()) {
 		echo "<a href='index-1.php?category=" . $row["id"] . "'>" . $row["name"] . "</a>";
+		echo "<a href='categoryBefore.php?id=" . $row["id"] . "'>修改类别</a>";
 	}
 } else {
 	echo "0 结果";

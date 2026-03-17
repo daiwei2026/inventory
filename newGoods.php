@@ -15,13 +15,13 @@
 		?>
 	</div>
 	<div id="right">
-		<form action="create.php" method="post" enctype="multipart/form-data">
+		<form action="createGoods.php" method="post" enctype="multipart/form-data">
 		  	<input type="hidden" name="category" value="<?php echo $_GET['category']; ?>"><br>
-			<input type="text" name="name"><br>
-			<input type="text" name="price"><br>
-			<input type="text" name="store"><br>
-			<input type="text" name="sell"><br>
-			<input type="file" name="image"><br>
+			商品名：<input type="text" name="name"><br>
+			商品单价：<input type="text" name="price"><br>
+			库存：<input type="text" name="store"><br>
+			已卖出：<input type="text" name="sell"><br>
+			商品图片：<input type="file" name="image"><br>
 			<input type="submit"><br>
 			<input type="reset">
 		</form>

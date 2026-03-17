@@ -28,19 +28,14 @@
 			die('连接失败: ' . $conn->connect_error);
 		}
 
-		$sql = 'SELECT * FROM goods WHERE id=' . $id;
+		$sql = 'SELECT * FROM category WHERE id=' . $id;
 		$result = $conn->query($sql);
 		$row = $result->fetch_row();
 		?>
 	<div id="right">
-		<form action="modifyGoods.php" method="post" enctype="multipart/form-data">
+		<form action="modifyCategory.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $id; ?>"><br>
-		  	商品分类：<input type="text" name="category" value="<?php echo $row[1]; ?>"><br>
-			商品名：<input type="text" name="name" value="<?php echo $row[2]; ?>"><br>
-			商品单价：<input type="text" name="price" value="<?php echo $row[3]; ?>"><br>
-			库存：<input type="text" name="store" value="<?php echo $row[4]; ?>"><br>
-			售出：<input type="text" name="sell" value="<?php echo $row[5]; ?>"><br>
-			商品图片：<input type="file" name="image"><br>
+		  	分类名：<input type="text" name="name" value="<?php echo $row[1]; ?>"><br>
 			<input type="submit"><br>
 			<input type="reset">
 		</form>
