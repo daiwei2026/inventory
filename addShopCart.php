@@ -62,21 +62,6 @@
 			echo "0 结果";
 		}
 		echo "<a class='link' href='newGoods.php?category=" . $category . "'>newGoods</a>";
-
-		?>
-	</div>
-	<div id="nav">
-		<?php
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '@Passw0rd';
-		$dbname = 'inventory';
-		// 创建连接
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die('连接失败: ' . $conn->connect_error);
-		}
 		if (!$_GET["category"]) {
 			$sql = "SELECT * FROM category LIMIT 1;";
 			$result = $conn->query($sql);
@@ -96,7 +81,7 @@
 		if ($_GET["current"])
 			$current = $_GET["current"];
 		else $current = 1;
-		if ($current <= $pages && $current > 1)
+		if ($current > 1)
 			echo "<a href='index-1.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
 		for ($i = 1; $i <= $pages; $i++) {
 			if ($i == $current)
@@ -104,7 +89,7 @@
 			else
 				echo "<a href='index-1.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
 		}
-		if ($current < $pages && $current >= $pages - 1)
+		if ($current < $pages)
 			echo "<a href='index-1.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
 		?>
 	</div>
