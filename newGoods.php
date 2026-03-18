@@ -16,7 +16,7 @@
 	</div>
 	<div id="right">
 		<form action="createGoods.php" method="post" enctype="multipart/form-data">
-		  	<input type="hidden" name="category" value="<?php echo $_GET['category']; ?>"><br>
+			<input type="hidden" name="category" value="<?php echo $_GET['category']; ?>"><br>
 			商品名：<input type="text" name="name"><br>
 			商品单价：<input type="text" name="price"><br>
 			库存：<input type="text" name="store"><br>

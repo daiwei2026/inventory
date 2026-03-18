@@ -14,28 +14,28 @@
 		require "common.php";
 		?>
 	</div>
-		<?php
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '@Passw0rd';
-		$dbname = 'inventory';
-		$id = $_GET["id"];
+	<?php
+	$servername = 'localhost';
+	$username = 'root';
+	$password = '@Passw0rd';
+	$dbname = 'inventory';
+	$id = $_GET["id"];
 
-		// 创建连接
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die('连接失败: ' . $conn->connect_error);
-		}
+	// 创建连接
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die('连接失败: ' . $conn->connect_error);
+	}
 
-		$sql = 'SELECT * FROM goods WHERE id=' . $id;
-		$result = $conn->query($sql);
-		$row = $result->fetch_row();
-		?>
+	$sql = 'SELECT * FROM goods WHERE id=' . $id;
+	$result = $conn->query($sql);
+	$row = $result->fetch_row();
+	?>
 	<div id="right">
 		<form action="modifyGoods.php" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="id" value="<?php echo $id; ?>"><br>
-		  	商品分类：<input type="text" name="category" value="<?php echo $row[1]; ?>"><br>
+			商品分类：<input type="text" name="category" value="<?php echo $row[1]; ?>"><br>
 			商品名：<input type="text" name="name" value="<?php echo $row[2]; ?>"><br>
 			商品单价：<input type="text" name="price" value="<?php echo $row[3]; ?>"><br>
 			库存：<input type="text" name="store" value="<?php echo $row[4]; ?>"><br>

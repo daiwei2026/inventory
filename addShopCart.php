@@ -27,16 +27,16 @@
 		if ($conn->connect_error) {
 			die('连接失败: ' . $conn->connect_error);
 		}
-		
+
 		$sql = "INSERT INTO shopcart (goods) VALUES ('" . $_GET["id"] .  "')";
- 
+
 		if ($conn->query($sql) === TRUE) {
 			echo $id = $conn->insert_id;
 			echo "新记录插入成功";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
-		
+
 		if (!$_GET["category"]) {
 			$sql = "SELECT * FROM category LIMIT 1;";
 			$result = $conn->query($sql);

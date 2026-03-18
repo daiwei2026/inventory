@@ -2,20 +2,20 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
-	<div id="left">
-		<?php
-		require "common.php";
-		?>
-	</div>
-	<div id="right">
-	<?php
+    <div id="left">
+        <?php
+        require "common.php";
+        ?>
+    </div>
+    <div id="right">
+        <?php
         $servername = "localhost";
         $username = "root";
         $password = "@Passw0rd";
@@ -29,7 +29,7 @@
         }
 
         $conn->query("SET NAMES UTF8");
-        
+
         date_default_timezone_set("Asia/Shanghai");
 
         $sql = "UPDATE category SET name='" . $_POST["name"] . "' WHERE id=" . $_POST["id"];
@@ -42,8 +42,8 @@
         }
 
         $conn->close();
-	?>
-</div>
+        ?>
+    </div>
 </body>
 
 </html>
