@@ -34,21 +34,6 @@
 		$row = $result->fetch_row();
 		// 输出数据
 		echo "<img src='$row[6]' width='100%'><p>商品名：$row[2]</p><p>价格：$row[3]</p><p>库存：$row[4]</p><p>已卖出：$row[5]</p></a><a href=goodsBefore.php?id=" . $row[0] . ">modify</a><a href=delete.php?id=" . $row[0] . ">delete</a><a href=addShopCart.php?id=" . $row[0] . ">添加到购物车</a><br>";
-		?>
-	</div>
-	<div id="nav">
-		<?php
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '@Passw0rd';
-		$dbname = 'inventory';
-		$id = $_GET["id"];
-		// 创建连接
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die('连接失败: ' . $conn->connect_error);
-		}
 		if (!$_GET["category"]) {
 			$sql = "SELECT * FROM category LIMIT 1;";
 			$result = $conn->query($sql);

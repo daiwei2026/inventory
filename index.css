@@ -2,19 +2,12 @@
 {
 	width: 30%;
 	float: left;
-	height: 1600px;
 }
 
 #right
 {
 	width: 70%;
 	float: left;
-}
-
-#nav
-{
-  width: 70%;
-	height: 200px;
 }
 
 #left a
@@ -47,20 +40,13 @@
   background-color: #bbbbbb;
 }
 
-#nav a
-{
-  float: left;
-  height: 40px;
-  line-height: 40px;
-}
-
 a.show
 {
   display: block;
   position: relative;
   float: left;
   width: 50%;
-  height: 200px;
+  height: 300px;
 }
 
 img

@@ -49,21 +49,6 @@
 			echo "0 结果";
 		}
 		echo "<a class='link' href='newGoods.php?category=" . $category . "'>newGoods</a>";
-
-		?>
-	</div>
-	<div id="nav">
-		<?php
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '@Passw0rd';
-		$dbname = 'inventory';
-		// 创建连接
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die('连接失败: ' . $conn->connect_error);
-		}
 		if (!$_GET["category"]) {
 			$sql = "SELECT * FROM category LIMIT 1;";
 			$result = $conn->query($sql);
