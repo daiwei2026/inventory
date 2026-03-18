@@ -49,36 +49,39 @@
 			echo "0 结果";
 		}
 		echo "<a class='link' href='newGoods.php?category=" . $category . "'>newGoods</a>";
-		if (!$_GET["category"]) {
-			$sql = "SELECT * FROM category LIMIT 1;";
-			$result = $conn->query($sql);
-			$category = $result->fetch_row()[0];
-		} else {
-			$category = $_GET["category"];
-		}
-		$sql = 'SELECT count(*) FROM goods WHERE category=' . $category;
-		$result = $conn->query($sql);
-		$row = $result->fetch_row();
-		if ($row[0] == 0)
-			$pages = 0;
-		else if ($row[0] % 10 == 0)
-			$pages = $row[0] / 10;
-		else
-			$pages = (int)($row[0] / 10 + 1);
-		if ($_GET["current"])
-			$current = $_GET["current"];
-		else $current = 1;
-		if ($current > 1)
-			echo "<a href='index-1.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
-		for ($i = 1; $i <= $pages; $i++) {
-			if ($i == $current)
-				echo "<a href='javascript:void(0);' style='color:gray;'>" . $i . "</a>";
-			else
-				echo "<a href='index-1.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
-		}
-		if ($current < $pages)
-			echo "<a href='index-1.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
 		?>
+		<div id="nav"><?php
+				if (!$_GET["category"]) {
+					$sql = "SELECT * FROM category LIMIT 1;";
+					$result = $conn->query($sql);
+					$category = $result->fetch_row()[0];
+				} else {
+					$category = $_GET["category"];
+				}
+				$sql = 'SELECT count(*) FROM goods WHERE category=' . $category;
+				$result = $conn->query($sql);
+				$row = $result->fetch_row();
+				if ($row[0] == 0)
+					$pages = 0;
+				else if ($row[0] % 10 == 0)
+					$pages = $row[0] / 10;
+				else
+					$pages = (int)($row[0] / 10 + 1);
+				if ($_GET["current"])
+					$current = $_GET["current"];
+				else $current = 1;
+				if ($current > 1)
+					echo "<a href='index-1.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
+				for ($i = 1; $i <= $pages; $i++) {
+					if ($i == $current)
+						echo "<a href='javascript:void(0);' style='color:gray;'>" . $i . "</a>";
+					else
+						echo "<a href='index-1.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
+				}
+				if ($current < $pages)
+					echo "<a href='index-1.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
+				?>
+		</div>
 	</div>
 </body>
 

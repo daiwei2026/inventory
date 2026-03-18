@@ -83,3 +83,9 @@ span.store
   right: 0px;
   text-align: right;
 }
+
+#nav
+{
+  width: 100%;
+  float: left;
+}
