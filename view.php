@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -73,15 +73,15 @@
 		else
 			$current = 1;
 		if ($current > 1)
-			echo "<a href='index-1.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
+			echo "<a href='view.php?category=" . $category . "&current=" . $current - 1 . "'>&lt;preview</a>";
 		for ($i = 1; $i <= $pages; $i++) {
 			if ($i == $current)
 				echo "<a href='javascript:void(0);' style='color:gray;'>" . $i . "</a>";
 			else
-				echo "<a href='index-1.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
+				echo "<a href='view.php?category=" . $category . "&current=" . $i . "'>" . $i . "</a>";
 		}
 		if ($current < $pages)
-			echo "<a href='index-1.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
+			echo "<a href='view.php?category=" . $category . "&current=" . $current + 1 . "'>next&gt;</a>";
 		?>
 		</div>
 	</div>

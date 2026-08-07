@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -33,7 +33,8 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_row();
 		// 输出数据
-		echo "<img src='$row[6]' width='100%'><p>商品名：$row[2]</p><p>价格：$row[3]</p><p>库存：$row[4]</p><p>已卖出：$row[5]</p></a><a href=goodsBefore.php?id=" . $row[0] . ">modify</a><a href=delete.php?id=" . $row[0] . ">delete</a><a href=addShopCart.php?id=" . $row[0] . ">添加到购物车</a><br>";
+		echo "<img src='$row[6]' width='100%'><p>商品名：$row[2]</p><p>价格：$row[3]</p><p>库存：$row[4]</p><p>已卖出：$row[5]</p></a><a href=goodsBefore.php?id=" . $row[0] . ">modify</a><a href=delete.php?id=" . $row[0] . ">delete</a><br>";
+		echo "<a href=addShopCart.php?id=" . $row[0] . ">添加到购物车</a><br>";
 		?>
 		<div id="nav">
 			<?php

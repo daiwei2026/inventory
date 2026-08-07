@@ -25,7 +25,7 @@
   background-color: #bbbbbb;
 }
 
-#right a.link
+#right a
 {
   float: left;
   width: 100%;
@@ -40,7 +40,7 @@
   background-color: #bbbbbb;
 }
 
-a.show
+#right a.show
 {
   display: block;
   position: relative;
